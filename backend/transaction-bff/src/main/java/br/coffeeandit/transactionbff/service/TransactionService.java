@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class TransactionService {
 
-    private TransactionRedisRepository transactionRedisRepository;
+    private final TransactionRedisRepository transactionRedisRepository;
 
     public TransactionService(TransactionRedisRepository transactionRedisRepository) {
         this.transactionRedisRepository = transactionRedisRepository;
