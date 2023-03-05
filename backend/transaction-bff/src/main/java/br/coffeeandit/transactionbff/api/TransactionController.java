@@ -23,13 +23,11 @@ import java.util.Optional;
 @RequestMapping("/transaction")
 @Tag(name = "/transaction", description = "Grupo de API's para manipulação de transações financeiras")
 public class TransactionController {
+    private final TransactionService transactionService;
 
     public TransactionController(TransactionService transactionService) {
         this.transactionService = transactionService;
     }
-
-    private TransactionService transactionService;
-
 
     @Operation(description = "API para criar uma transação financeira")
     @ResponseBody

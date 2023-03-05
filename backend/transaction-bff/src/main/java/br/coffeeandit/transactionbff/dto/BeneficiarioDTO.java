@@ -11,7 +11,6 @@ import java.io.Serializable;
 @Getter
 @Setter
 @ToString
-
 public class BeneficiarioDTO implements Serializable {
 
     private static final long serialVersionUID = 2806421543985360625L;
