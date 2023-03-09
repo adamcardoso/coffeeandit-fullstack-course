@@ -2,6 +2,7 @@ package br.coffeeandit.transactionbff.service;
 
 import br.coffeeandit.transactionbff.dto.RequestTransactionDTO;
 import br.coffeeandit.transactionbff.dto.TransactionDTO;
+import br.coffeeandit.transactionbff.exception.UnauthorizedException;
 import br.coffeeandit.transactionbff.repositories.TransactionRedisRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,8 +27,14 @@ public class TransactionService {
     }
 
     public Optional<TransactionDTO> findById(final String id) {
+
+        if (id.equals("2")) {
+            throw new UnauthorizedException("Esta é uma aula de controle de exceções");
+        }
+
         return transactionRedisRepository.findById(id);
     }
 
 }
+
 

@@ -8,9 +8,10 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 @Configuration
 public class FeignConfig {
 
-
     @Bean
-    public HttpMessageConverters messageConverters() {
+    public HttpMessageConverters messageConverter() {
         return new HttpMessageConverters(new MappingJackson2HttpMessageConverter());
+
     }
 }
+

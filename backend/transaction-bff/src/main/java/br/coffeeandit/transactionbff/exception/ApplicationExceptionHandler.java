@@ -27,7 +27,6 @@ public class ApplicationExceptionHandler {
         log.error("Erro interno tratado.", exception);
         return response("Erro genérico", HttpStatus.INTERNAL_SERVER_ERROR);
     }
-
     @ExceptionHandler(NotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ResponseEntity<ErrorResponse> notFound(NotFoundException exception) {

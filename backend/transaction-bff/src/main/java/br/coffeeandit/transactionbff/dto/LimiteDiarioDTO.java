@@ -14,5 +14,5 @@ public class LimiteDiarioDTO {
     private Long id;
     private Long agencia;
     private Long conta;
-    private BigDecimal limiteDiario;
+    private BigDecimal valor;
 }

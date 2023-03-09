@@ -13,6 +13,6 @@ public interface LimiteClient {
 
     @RequestMapping(path = "/limite-diario/{agencia}/{conta}", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
     LimiteDiarioDTO buscarLimiteDiario(@PathVariable("agencia") final Long agencia, @PathVariable("conta") final Long conta);
-
 }
+
 

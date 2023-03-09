@@ -28,6 +28,14 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
+    
+    // Circuit breaker
+
+    implementation 'io.github.resilience4j:resilience4j-circuitbreaker:1.7.1'
+    implementation 'io.github.resilience4j:resilience4j-core:1.7.1'
+    implementation 'io.github.resilience4j:resilience4j-all:1.7.1'
+
+
 
     // Redis
 
@@ -41,7 +49,9 @@ dependencies {
 
     implementation 'io.springfox:springfox-swagger2:3.0.0'
 
-    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '3.1.0'
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '4.0.1'
+
+
 
 }
 

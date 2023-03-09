@@ -3,6 +3,7 @@ package br.coffeeandit.transactionbff.api;
 
 import br.coffeeandit.transactionbff.dto.RequestTransactionDTO;
 import br.coffeeandit.transactionbff.dto.TransactionDTO;
+import br.coffeeandit.transactionbff.exception.NotFoundException;
 import br.coffeeandit.transactionbff.service.TransactionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -23,11 +24,13 @@ import java.util.Optional;
 @RequestMapping("/transaction")
 @Tag(name = "/transaction", description = "Grupo de API's para manipulação de transações financeiras")
 public class TransactionController {
-    private final TransactionService transactionService;
 
     public TransactionController(TransactionService transactionService) {
         this.transactionService = transactionService;
     }
+
+    private final TransactionService transactionService;
+
 
     @Operation(description = "API para criar uma transação financeira")
     @ResponseBody
@@ -59,7 +62,7 @@ public class TransactionController {
         if (transactionDto.isPresent()) {
             return Mono.just(transactionDto.get());
         }
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Unable to find resource");
+        throw new NotFoundException("Unable to find resource");
 
     }
 
@@ -86,3 +89,4 @@ public class TransactionController {
     }
 
 }
+
