@@ -12,7 +12,6 @@ import java.util.Optional;
 public class LimiteDiarioService {
 
     LimiteDiarioRepository limiteDiarioRepository;
-
     @Value("${limite.valor:0}")
     private BigDecimal valorDiario;
 
@@ -20,9 +19,9 @@ public class LimiteDiarioService {
         this.limiteDiarioRepository = limiteDiarioRepository;
     }
 
-    public Optional<LimiteDiario> buscarLimiteDiario(final Long agencia, final Long conta){
-        final Optional<LimiteDiario> limiteDiario = limiteDiarioRepository.findByAgenciaAndConta(agencia, conta);
-        if(limiteDiario.isPresent()){
+    public Optional<LimiteDiario> buscarLimiteDiario(final Long agencia, final Long conta) {
+        var limiteDiario = limiteDiarioRepository.findByAgenciaAndConta(agencia, conta);
+        if (limiteDiario.isEmpty()) {
             var limite = new LimiteDiario();
             limite.setValor(valorDiario);
             limite.setConta(conta);
@@ -35,5 +34,8 @@ public class LimiteDiarioService {
     public Optional<LimiteDiario> findById(Long id) {
         return limiteDiarioRepository.findById(id);
     }
+
+
 }
+
 

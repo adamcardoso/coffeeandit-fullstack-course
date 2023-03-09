@@ -11,6 +11,6 @@ public interface LimiteDiarioRepository extends CrudRepository<LimiteDiario, Lon
 
 
     Optional<LimiteDiario> findByAgenciaAndConta(final Long agencia, final Long conta);
-
 }
+
 

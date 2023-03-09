@@ -21,14 +21,14 @@ public class LimiteDiarioController {
     }
 
     @GetMapping(value = "/limite-diario/{agencia}/{conta}")
-    public LimiteDiario buscarLimiteDiario(@PathVariable("agencia") final Long agencia, @PathVariable("conta") final Long conta){
-        final Optional<LimiteDiario> limiteDiario = limiteDiarioService.buscarLimiteDiario(agencia, conta);
+    public LimiteDiario buscarLimiteDiario(@PathVariable("agencia") final Long agencia, @PathVariable("conta") final Long conta) {
 
+        final Optional<LimiteDiario> limiteDiario = limiteDiarioService.buscarLimiteDiario(agencia, conta);
         if (limiteDiario.isPresent()) {
             return limiteDiario.get();
         }
 
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Recurso não encontrado");
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Recurso nao encontrado");
     }
 
     @GetMapping(value = "/limite-diario/{id}")
@@ -40,7 +40,8 @@ public class LimiteDiarioController {
             return limiteDiarioOpt.get();
         }
 
-        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Recurso não encontrado");
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Recurso nao encontrado");
     }
+
 }
 
