@@ -42,6 +42,5 @@ public class LimiteDiarioController {
 
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Recurso nao encontrado");
     }
-
 }
 

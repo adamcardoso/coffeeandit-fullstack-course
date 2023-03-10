@@ -8,9 +8,8 @@ import java.util.Optional;
 
 @Repository
 public interface LimiteDiarioRepository extends CrudRepository<LimiteDiario, Long> {
-
-
     Optional<LimiteDiario> findByAgenciaAndConta(final Long agencia, final Long conta);
+
 }
 
 

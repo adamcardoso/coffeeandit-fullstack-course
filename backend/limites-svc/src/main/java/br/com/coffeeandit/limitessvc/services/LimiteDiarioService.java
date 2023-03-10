@@ -34,8 +34,7 @@ public class LimiteDiarioService {
     public Optional<LimiteDiario> findById(Long id) {
         return limiteDiarioRepository.findById(id);
     }
-
-
 }
+
 
 
