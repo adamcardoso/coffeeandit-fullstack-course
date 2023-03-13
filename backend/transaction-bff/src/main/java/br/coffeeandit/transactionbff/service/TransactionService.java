@@ -4,7 +4,6 @@ import br.coffeeandit.transactionbff.dto.RequestTransactionDTO;
 import br.coffeeandit.transactionbff.dto.TransactionDTO;
 import br.coffeeandit.transactionbff.repositories.TransactionRedisRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.QueryTimeoutException;
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Retryable;
